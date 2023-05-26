@@ -19,21 +19,21 @@ namespace LoggingSys
         /// <summary>
         /// Handles writing to the log as well as printing to the console with proper formatting.
         /// </summary>
-        /// <param name="message">Message to be logged.</param>
+        /// <param name="outputMessage">Message to be logged.</param>
         /// <param name="messageType">The type of message being logged.</param>
         /// <param name="printToConsole">Boolean value representing if the log goes to the Console.</param>
         /// <param name="addToLog">Boolean value representing if the log goes to the File.</param>
-        internal async static Task Print(string message, MessageType messageType = MessageType.Empty, bool printToConsole = true, bool addToLog = true,[CallerLineNumber] int line = 0, [CallerMemberName] string caller = "", [CallerFilePath] string callerFilePath = "")
+        internal async static Task Print(string outputMessage, MessageType messageType = MessageType.Empty, bool printToConsole = true, bool addToLog = true,[CallerLineNumber] int line = 0, [CallerMemberName] string caller = "", [CallerFilePath] string callerFilePath = "")
         {
             //Format the message for when we print it.
-            message = message.FormatForPrint(messageType, line, caller, callerFilePath);
+            outputMessage = outputMessage.FormatForPrint(messageType, line, caller, callerFilePath);
 
             //If it's to the console, then get the console ready to color code it.
             if (printToConsole)
-                PrintToConsole(message, messageType);
+                PrintToConsole(outputMessage, messageType);
 
             if (addToLog) 
-                await WriteLog(message);
+                await WriteLog(outputMessage);
         }
 
         /// <summary>

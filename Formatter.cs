@@ -1,47 +1,59 @@
 ﻿using LoggingSys;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using TapeTextFormatter;
 using OfficeOpenXml;
-using System.Text.RegularExpressions;
+//using System.Text.RegularExpressions;
 using System.Data;
+using System.Configuration;
+using System.Collections.Specialized;
+using Microsoft.Extensions.Configuration;
 
 namespace Main
 {
     internal class Program
     {
+        protected static string INPUT_PATH;
+        protected static string OUTPUT_PATH;
+        protected static List<string> COLUMNS;
+
         //[STAThreadAttribute]
         internal static void Main(string[] args)
         {
+            //INPUT_PATH = ConfigurationManager.AppSettings.Get("inputFolder");
             /*TODO: Add support for pasting a text file directory instead of the list itself AND being able to add the text file in the Input folder.*/
             //Get the desired list from the user.
             Output.Print("Please paste in the list of tape names we need.", MessageType.System).GetAwaiter().GetResult();
-            List<string> desiredList = AwaitEntries();
-            desiredList.Sort();
-            desiredList.Each(val => val = val.TrimM8());
+            List<string> desiredListOfTapeNames = AwaitEntries();
+            desiredListOfTapeNames.Sort();
+            desiredListOfTapeNames.Each(val => val = val.TrimM8());
 
             //Log print
-            Output.Print("User entered: " + string.Join(", ", desiredList), MessageType.System, false).GetAwaiter().GetResult();
+            Output.Print("User entered: " + string.Join(", ", desiredListOfTapeNames), MessageType.System, false).GetAwaiter().GetResult();
 
             //Get the Excel Sheet from the user.
             Output.Print("Please paste the directory to the Excel Spreadsheet.", MessageType.System).GetAwaiter().GetResult();
-        Input:
+        ExcelSheetEntry:
             string excelDestination = Console.ReadLine();
 
             //Log print
             Output.Print("User entered: " + excelDestination, MessageType.System, false).GetAwaiter().GetResult();
 
-            List<TapeData> possibleData;
+            List<TapeData> unfilteredTapeDataList;
+            //Verifies the entry is valid
             if (File.Exists(excelDestination) || excelDestination == "Input")
             {
+                //Allows the user to specify "Whatever is in the input folder"
                 if (excelDestination == "Input")
                 {
-                    string inputFileDestination = Directory.GetFiles(excelDestination).First().ToString();
+                    //Finds all files in the folder, then filters out any that are text files.
+                    string inputFileDestination = Directory.GetFiles(excelDestination).First(file => !file.EndsWith(".txt"));
+                    //If we did not find anything, inform the user to try again.
                     if (inputFileDestination.DefaultOrNull())
                     {
                         Output.Print($"Input folder either does not exist or is empty. Please ensure this is not the case and try again.", MessageType.Warning).GetAwaiter().GetResult();
-                        goto Input;
+                        goto ExcelSheetEntry;
                     }
-                    excelDestination = Directory.GetFiles(excelDestination).First();
+                    excelDestination = inputFileDestination;
                 }
 
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -54,51 +66,54 @@ namespace Main
 
                 //Create all the tape data objects
                 ExcelWorksheet sheet = package.Workbook.Worksheets[0];
-                possibleData = ExtractData(sheet, "A", "B", "D");
+                /*TODO: Take the columns we want to search for from the config.*/
+                unfilteredTapeDataList = ExtractData(sheet, "A", "B", "D");
 
                 //Sort the list alphabetically
-                possibleData.Sort((x, y) => string.Compare(x.tapeName, y.tapeName));
+                unfilteredTapeDataList.Sort((x, y) => string.Compare(x.tapeName, y.tapeName));
 
-                Output.Print("Tape names found: " + string.Join(", ", possibleData), MessageType.Debug, false).GetAwaiter().GetResult();
+                //Logging the extracted data for debugging
+                Output.Print("Tape names found: " + string.Join(", ", unfilteredTapeDataList), MessageType.Debug, false).GetAwaiter().GetResult();
 
                 //Filter out the ones we don't need
-                List<TapeData> filteredList = new();
-                foreach (var candidate in possibleData)
+                List<TapeData> filteredTapeDataList = new();
+                foreach (var candidate in unfilteredTapeDataList)
                 {
-                    desiredList.Each(entry =>
+                    desiredListOfTapeNames.Each(entry =>
                     {
                         if (entry.ToLower().Equals(candidate.tapeName.ToLower()))
-                            filteredList.Add(candidate);
+                            filteredTapeDataList.Add(candidate);
                     });
                 }
 
-                Output.Print("Filtered list: " + string.Join(", ", filteredList), MessageType.Debug, false).GetAwaiter().GetResult();
+                //Logging the filtered list for debugging
+                Output.Print("Filtered list: " + string.Join(", ", filteredTapeDataList), MessageType.Debug, false).GetAwaiter().GetResult();
 
                 using (ExcelPackage output = new ExcelPackage())
                 {
                     ExcelWorksheet worksheet = output.Workbook.Worksheets.Add("Sheet1");
                     int columnIndex = 1;
-                    foreach (var tape in filteredList)
+                    foreach (var tape in filteredTapeDataList)
                     {
                         worksheet.Cells[$"A{columnIndex}"].Value = tape.tapeName;
                         worksheet.Cells[$"B{columnIndex}"].Value = tape.tapeReturnDate;
                         worksheet.Cells[$"C{columnIndex}"].Value = tape.tapeDescription;
                         columnIndex++;
                     }
-
+                    
                     output.SaveAs($"Output/{DateTime.Now.ToString("MM-dd-yyyy")}.xlsx");
                 }
 
                 using (StreamWriter writer = new($"Output/{DateTime.Now.ToString("MM-dd-yyyy")}.txt"))
                 {
-                    foreach (var tape in filteredList)
+                    foreach (var tape in filteredTapeDataList)
                         writer.WriteLine(tape.tapeName);
                 }
             }
             else
             {
                 Output.Print("No such file exists. Please try again.", MessageType.Warning).GetAwaiter().GetResult();
-                goto Input;
+                goto ExcelSheetEntry;
             }
 
             Output.Print("All finished. Check the output folder for the results :)", MessageType.System, true, false).GetAwaiter().GetResult();
@@ -106,12 +121,12 @@ namespace Main
         }
 
 
-        private static List<TapeData> ExtractData(ExcelWorksheet sheet, params string[] Cells)
+        private static List<TapeData> ExtractData(ExcelWorksheet sheet, params string[] Rows)
         {
-            List<string>[] data = new List<string>[Cells.Length];
+            List<string>[] data = new List<string>[Rows.Length];
             List<TapeData> extractedData = new();
 
-            for (int i = 0; i < Cells.Length; i++)
+            for (int i = 0; i < Rows.Length; i++)
             {
                 if (sheet.Columns.Any(val => val.Hidden))
                 {
@@ -119,7 +134,7 @@ namespace Main
                     return null;
                 }
 
-                var columnARange = sheet.Cells[$"{Cells[i]}:{Cells[i]}"];
+                var columnARange = sheet.Cells[$"{Rows[i]}:{Rows[i]}"];
                 data[i] = columnARange.Select(cell => cell.Value?.ToString()).ToList();
             }
             
