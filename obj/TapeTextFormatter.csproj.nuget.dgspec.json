@@ -56,6 +56,10 @@
             "System.Security.Permissions": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "ini-parser": {
+              "target": "Package",
+              "version": "[2.5.2, )"
             }
           },
           "imports": [

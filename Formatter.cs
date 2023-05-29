@@ -2,44 +2,101 @@
 using TapeTextFormatter;
 using OfficeOpenXml;
 using System.Data;
+using Configuration;
+using FileSaving;
 
 namespace Main
 {
     internal class Program
     {
+        private static ConfigReader _config = new();
+        private static ExcelSaver _excelSaver = new();
+        private static TextSaver _textSaver = new();
+
+        /// <summary>
+        /// Contains the directory (NOT A FILE) for the output.
+        /// </summary>
+        private static string outputDirectory;
+        /// <summary>
+        /// Contains the directory (NOT A FILE) for the input.
+        /// </summary>
+        private static string inputDirectory;
+
         internal static void Main(string[] args)
         {
-            /*TODO: Add support for pasting a text file directory instead of the list itself AND being able to add the text file in the Input folder.*/
+            outputDirectory = _config.GetDestination(ConfigReader.Destinations.Default);
+
+            #region Desired List Construction
             //Get the desired list from the user.
-            Output.Print("Please paste in the list of tape names we need.", MessageType.System).GetAwaiter().GetResult();
+            Logging.Print("Please paste in the list of tape names we need.", MessageType.System).GetAwaiter().GetResult();
+            //If the input is invalid, go back to recapture it.
+            AwaitInput:
             List<string> desiredListOfTapeNames = AwaitEntries();
+
+            if (File.Exists(desiredListOfTapeNames[0]) || desiredListOfTapeNames[0].ToLower() == "input")
+            {
+                //This will be the final destination we are reading. Set it to first entry and then check if it needs to change.
+                string inputFileDestination = desiredListOfTapeNames[0];
+                
+                //Read the file in the input folder.
+                if (desiredListOfTapeNames[0].ToLower() == "input") 
+                {
+                    //Finds all files in the folder, then filters out any that are text files.
+                    inputDirectory = _config.GetDestination(ConfigReader.Destinations.InputFolder);
+                    inputFileDestination = Directory.GetFiles(inputDirectory).First(file => !file.EndsWith(".txt"));
+                    //If we did not find anything, inform the user to try again.
+                    if (inputFileDestination.DefaultOrNull())
+                    {
+                        //Print summary of what went wrong.
+                        Logging.Print($"Input folder either does not exist or is empty. Please ensure this is not the case and try again.", MessageType.Warning).GetAwaiter().GetResult();
+                        //Silent debug log
+                        Logging.Print($"User Input: {string.Join(", ", desiredListOfTapeNames)}\nExtracted: {inputFileDestination}", MessageType.Debug, printToConsole: false).GetAwaiter().GetResult();
+                        goto AwaitInput;
+                    }
+                }
+
+                try
+                {
+                    desiredListOfTapeNames = File.ReadAllLines(inputFileDestination).ToList();
+                }
+                catch(Exception ex)
+                {
+                    Logging.Print("Unknown error when processing. Going back to recapture input.", MessageType.Warning).GetAwaiter().GetResult();
+                    Logging.Print(ex.Message, MessageType.Error, printToConsole: false).GetAwaiter().GetResult(); //Adds the error message silently to the log for review.
+                    goto AwaitInput;
+                }
+            }
+            #endregion
+
+            //Sorts the list in alphabetical order.
             desiredListOfTapeNames.Sort();
-            desiredListOfTapeNames.Each(val => val = val.TrimM8());
+            //desiredListOfTapeNames.Each(val => val = val.TrimM8()); //Commented out temporarily since this is not a needed feature yet. Just shows where we need it.
 
-            //Log print
-            Output.Print("User entered: " + string.Join(", ", desiredListOfTapeNames), MessageType.System, false).GetAwaiter().GetResult();
+            //Silent log print
+            Logging.Print("User entered: " + string.Join(", ", desiredListOfTapeNames), MessageType.System, printToConsole: false).GetAwaiter().GetResult();
 
+            #region Possible List Construction
             //Get the Excel Sheet from the user.
-            Output.Print("Please paste the directory to the Excel Spreadsheet.", MessageType.System).GetAwaiter().GetResult();
+            Logging.Print("Please paste the directory to the Excel Spreadsheet.", MessageType.System).GetAwaiter().GetResult();
         ExcelSheetEntry:
             string excelDestination = Console.ReadLine();
 
             //Log print
-            Output.Print("User entered: " + excelDestination, MessageType.System, false).GetAwaiter().GetResult();
+            Logging.Print("User entered: " + excelDestination, MessageType.System, false).GetAwaiter().GetResult();
 
             List<TapeData> unfilteredTapeDataList;
             //Verifies the entry is valid
-            if (File.Exists(excelDestination) || excelDestination == "Input")
+            if (File.Exists(excelDestination) || excelDestination.ToLower() == "input")
             {
                 //Allows the user to specify "Whatever is in the input folder"
-                if (excelDestination == "Input")
+                if (excelDestination.ToLower() == "input")
                 {
                     //Finds all files in the folder, then filters out any that are text files.
                     string inputFileDestination = Directory.GetFiles(excelDestination).First(file => !file.EndsWith(".txt"));
                     //If we did not find anything, inform the user to try again.
                     if (inputFileDestination.DefaultOrNull())
                     {
-                        Output.Print($"Input folder either does not exist or is empty. Please ensure this is not the case and try again.", MessageType.Warning).GetAwaiter().GetResult();
+                        Logging.Print($"Input folder either does not exist or is empty. Please ensure this is not the case and try again.", MessageType.Warning).GetAwaiter().GetResult();
                         goto ExcelSheetEntry;
                     }
                     excelDestination = inputFileDestination;
@@ -56,27 +113,29 @@ namespace Main
                 //Create all the tape data objects
                 ExcelWorksheet sheet = package.Workbook.Worksheets[0];
                 /*TODO: Take the columns we want to search for from the config.*/
-                unfilteredTapeDataList = ExtractData(sheet, "A", "B", "D");
+                unfilteredTapeDataList = ExtractData(sheet, _config.GetColumns());
 
                 //Sort the list alphabetically
-                unfilteredTapeDataList.Sort((x, y) => string.Compare(x.tapeName, y.tapeName));
+                unfilteredTapeDataList.Sort((x, y) => string.Compare(x.name, y.name));
 
                 //Logging the extracted data for debugging
-                Output.Print("Tape names found: " + string.Join(", ", unfilteredTapeDataList), MessageType.Debug, false).GetAwaiter().GetResult();
+                Logging.Print("Tape names found: " + string.Join(", ", unfilteredTapeDataList), MessageType.Debug, false).GetAwaiter().GetResult();
+                #endregion
 
+                #region Filter Lists
                 //Filter out the ones we don't need
                 List<TapeData> filteredList = new();
                 foreach (var candidate in unfilteredTapeDataList)
                 {
                     desiredListOfTapeNames.Each(entry =>
                     {
-                        if (entry.ToLower().Equals(candidate.tapeName.ToLower()))
+                        if (entry.ToLower().Equals(candidate.name.ToLower()))
                             filteredList.Add(candidate);
                     });
                 }
 
                 //Logging the filtered list for debugging
-                Output.Print("Filtered list: " + string.Join(", ", filteredList), MessageType.Debug, false).GetAwaiter().GetResult();
+                Logging.Print("Filtered list: " + string.Join(", ", filteredList), MessageType.Debug, false).GetAwaiter().GetResult();
 
                 using (ExcelPackage output = new ExcelPackage())
                 {
@@ -84,29 +143,27 @@ namespace Main
                     int columnIndex = 1;
                     foreach (var tape in filteredList)
                     {
-                        worksheet.Cells[$"A{columnIndex}"].Value = tape.tapeName;
-                        worksheet.Cells[$"B{columnIndex}"].Value = tape.tapeReturnDate;
-                        worksheet.Cells[$"C{columnIndex}"].Value = tape.tapeDescription;
+                        worksheet.Cells[$"A{columnIndex}"].Value = tape.name;
+                        worksheet.Cells[$"B{columnIndex}"].Value = tape.returnDate;
+                        worksheet.Cells[$"C{columnIndex}"].Value = tape.description;
                         columnIndex++;
                     }
 
-                    output.SaveAs($"Output/{DateTime.Now.ToString("MM-dd-yyyy")}.xlsx");
+                    _excelSaver.SaveFileWhenReady(output, $"{outputDirectory}/{DateTime.Now.ToString("MM-dd-yyyy")}.xlsx");
                 }
 
-                using (StreamWriter writer = new($"Output/{DateTime.Now.ToString("MM-dd-yyyy")}.txt"))
-                {
-                    foreach (var tape in filteredList)
-                        writer.WriteLine(tape.tapeName);
-                }
+                string textFileLocation = $"{outputDirectory}/{DateTime.Now.ToString("MM-dd-yyyy")}.txt";
+                _textSaver.SaveFileWhenReady(new(textFileLocation), textFileLocation, filteredList.JoinSpecificField("\n", tape => tape.name));
             }
             else
             {
-                Output.Print("No such file exists. Please try again.", MessageType.Warning).GetAwaiter().GetResult();
+                Logging.Print("No such file exists. Please try again.", MessageType.Warning).GetAwaiter().GetResult();
                 goto ExcelSheetEntry;
             }
+            #endregion
 
-            Output.Print("All finished. Check the output folder for the results :)", MessageType.System, true, false).GetAwaiter().GetResult();
-            Output.PrintLogEnd().GetAwaiter().GetResult();
+            Logging.Print("All finished. Check the Logging folder for the results :)", MessageType.System, true, false).GetAwaiter().GetResult();
+            Logging.PrintLogEnd().GetAwaiter().GetResult();
         }
 
 
@@ -119,7 +176,7 @@ namespace Main
             {
                 if (sheet.Columns.Any(val => val.Hidden))
                 {
-                    Output.Print("One or more of the columns are hidden!", MessageType.Warning).GetAwaiter().GetResult();
+                    Logging.Print("One or more of the columns are hidden!", MessageType.Warning).GetAwaiter().GetResult();
                     return null;
                 }
 
@@ -142,13 +199,16 @@ namespace Main
             return extractedData;
         }
 
+
+        
+
         /// <summary>
         /// Waits for the user to finish entering multiple entries.
         /// </summary>
         /// <returns>A List of entries provided by the user.</returns>
         private static List<string> AwaitEntries()
         {
-            Output.PrintToConsole("Double press 'Return' when completed.", MessageType.System);
+            Logging.PrintToConsole("Double press 'Return' when completed.", MessageType.System);
             List<string> inputs = new();
             while (true)
             {

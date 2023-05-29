@@ -1,0 +1,286 @@
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:07:03 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:07:41 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:20:22 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:22:05 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:28:23 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:29:38 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:40:54 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 58]	[5/28/2023 3:41:42 PM]:
+User entered: BB0018
+BB0494
+BB0498
+BB0608
+BB0611
+BB0613
+BB0959
+BB0960
+BB1750
+BB1816
+BB1817
+
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 3:41:42 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 66]	[5/28/2023 3:41:50 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 103]	[5/28/2023 3:41:51 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 117]	[5/28/2023 3:41:51 PM]:
+Filtered list: 
+Log End: 5/28/2023 3:41:51 PM.
+
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:44:03 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 58]	[5/28/2023 3:44:09 PM]:
+User entered: BB0018
+BB0494
+BB0498
+BB0608
+BB0611
+BB0613
+BB0959
+BB0960
+BB1750
+BB1816
+BB1817
+
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 3:44:09 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 66]	[5/28/2023 3:44:12 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 103]	[5/28/2023 3:44:12 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:45:24 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 58]	[5/28/2023 3:45:27 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 3:45:27 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 66]	[5/28/2023 3:45:28 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 103]	[5/28/2023 3:45:29 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:50:39 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 58]	[5/28/2023 3:50:42 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 3:50:42 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 66]	[5/28/2023 3:50:43 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 103]	[5/28/2023 3:50:44 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:51:43 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 58]	[5/28/2023 3:51:48 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 3:51:48 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 66]	[5/28/2023 3:51:49 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 103]	[5/28/2023 3:51:49 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:52:30 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 58]	[5/28/2023 3:52:32 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 3:52:32 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 66]	[5/28/2023 3:52:33 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 103]	[5/28/2023 3:52:34 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:54:39 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 58]	[5/28/2023 3:54:42 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 3:54:42 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 66]	[5/28/2023 3:54:43 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 103]	[5/28/2023 3:54:43 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:55:04 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:56:10 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 3:58:42 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 4:05:04 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 59]	[5/28/2023 4:05:06 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 62]	[5/28/2023 4:05:06 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 67]	[5/28/2023 4:05:07 PM]:
+User entered: Input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 104]	[5/28/2023 4:05:07 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 118]	[5/28/2023 4:05:07 PM]:
+Filtered list: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+Log End: 5/28/2023 4:05:07 PM.
+
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 4:06:09 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 59]	[5/28/2023 4:06:11 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 62]	[5/28/2023 4:06:11 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 67]	[5/28/2023 4:06:12 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 104]	[5/28/2023 4:06:13 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 118]	[5/28/2023 4:06:13 PM]:
+Filtered list: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+Log End: 5/28/2023 4:06:28 PM.
+
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 4:07:49 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 18]	[5/28/2023 4:08:14 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:09:26 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:09:55 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:10:20 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 4:10:29 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 64]	[5/28/2023 4:10:29 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 69]	[5/28/2023 4:10:32 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 106]	[5/28/2023 4:10:32 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 120]	[5/28/2023 4:10:32 PM]:
+Filtered list: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+Log End: 5/28/2023 4:10:38 PM.
+
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:12:43 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 4:12:46 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 64]	[5/28/2023 4:12:46 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 69]	[5/28/2023 4:12:49 PM]:
+User entered: input
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:12:59 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 4:13:02 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 64]	[5/28/2023 4:13:02 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 69]	[5/28/2023 4:13:03 PM]:
+User entered: input
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:16:28 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 4:16:32 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 64]	[5/28/2023 4:16:32 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 69]	[5/28/2023 4:16:33 PM]:
+User entered: input
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:17:47 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 4:17:55 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 64]	[5/28/2023 4:17:55 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 69]	[5/28/2023 4:17:56 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 106]	[5/28/2023 4:18:39 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 120]	[5/28/2023 4:18:39 PM]:
+Filtered list: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+Log End: 5/28/2023 4:18:39 PM.
+
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:24:44 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 4:24:47 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 64]	[5/28/2023 4:24:47 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 69]	[5/28/2023 4:24:48 PM]:
+User entered: input
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:25:10 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 4:25:14 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 64]	[5/28/2023 4:25:14 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 69]	[5/28/2023 4:25:14 PM]:
+User entered: input
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:36:01 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 4:36:08 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 64]	[5/28/2023 4:36:08 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 69]	[5/28/2023 4:36:09 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 106]	[5/28/2023 4:36:33 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 120]	[5/28/2023 4:36:33 PM]:
+Filtered list: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+Log End: 5/28/2023 4:36:33 PM.
+
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:41:48 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 4:41:50 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 64]	[5/28/2023 4:41:50 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 69]	[5/28/2023 4:41:52 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 106]	[5/28/2023 4:41:56 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 120]	[5/28/2023 4:41:56 PM]:
+Filtered list: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:42:08 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 4:42:10 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 64]	[5/28/2023 4:42:10 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 69]	[5/28/2023 4:42:11 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 106]	[5/28/2023 4:42:14 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 120]	[5/28/2023 4:42:14 PM]:
+Filtered list: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+Log End: 5/28/2023 4:42:14 PM.
+
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:44:26 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 4:44:33 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 64]	[5/28/2023 4:44:33 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 69]	[5/28/2023 4:44:35 PM]:
+User entered: input
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 106]	[5/28/2023 4:55:41 PM]:
+Tape names found: AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855
+[Debug]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 120]	[5/28/2023 4:55:41 PM]:
+Filtered list: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+Log End: 5/28/2023 4:55:41 PM.
+
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 22]	[5/28/2023 4:55:45 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 61]	[5/28/2023 4:55:47 PM]:
+User entered: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 64]	[5/28/2023 4:55:47 PM]:
+Please paste the directory to the Excel Spreadsheet.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 69]	[5/28/2023 4:55:48 PM]:
+User entered: input
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 17]	[5/28/2023 5:00:38 PM]:
+Please paste in the list of tape names we need.
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 23]	[5/28/2023 5:00:40 PM]:
+User entered: input
+[System]	Main (E:\Personal Projects\TapeTextFormatter\Formatter.cs)	[Line: 26]	[5/28/2023 5:00:40 PM]:
+Please paste the directory to the Excel Spreadsheet.

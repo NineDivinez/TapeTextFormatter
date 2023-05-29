@@ -37,5 +37,8 @@ E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\runtimes\win\lib\net6.0\
 E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
-E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\Output\Placeholder.txt
 E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\Input\irnmtnrpt.csv
+E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\Config.ini
+E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\Input\Lexington Tapelist 05-25-23.txt
+E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\OutputLexington\Placeholder.txt
+E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\INIFileParser.dll

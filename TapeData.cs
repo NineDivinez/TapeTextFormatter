@@ -2,20 +2,20 @@
 {
     internal class TapeData
     {
-        internal string tapeName;
-        internal string tapeReturnDate;
-        internal string tapeDescription;
+        internal string name;
+        internal string returnDate;
+        internal string description;
 
-        public TapeData(string tapeNames, string tapeReturnDates, string tapeDescription)
+        public TapeData(string _name, string _returnDate, string _description)
         {
-            this.tapeName = tapeNames;
-            this.tapeReturnDate = tapeReturnDates;
-            this.tapeDescription = tapeDescription;
+            this.name = _name;
+            this.returnDate = _returnDate;
+            this.description = _description;
         }
 
         public override string ToString()
         {
-            return this.tapeName;
+            return this.name;
         }
     }
 }

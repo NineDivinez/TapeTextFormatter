@@ -10,11 +10,12 @@
   <ItemGroup>
     <Folder Include="Logs\" />
     <Folder Include="Input\" />
-    <Folder Include="Format\" />
+    <Folder Include="OutputChaska\" />
   </ItemGroup>
 
   <ItemGroup>
 	  <PackageReference Include="EPPlus" Version="6.2.4" />
+	  <PackageReference Include="ini-parser" Version="2.5.2" />
 	  <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
 	  <PackageReference Include="System.Security.Permissions" Version="5.0.0" />
     <Reference Include="System.Windows.Forms">
@@ -23,11 +24,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Config.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Input\irnmtnrpt.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Input\Lexington Tapelist 05-25-23.txt">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Input\TestSheet.xlsx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
@@ -38,7 +42,7 @@
     <None Update="Input\~%24TestSheet.xlsx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
-    <None Update="Output\Placeholder.txt">
+    <None Update="OutputLexington\Placeholder.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

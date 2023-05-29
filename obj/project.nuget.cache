@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "X3RmriRP4gRH/q4PCDqR1FZw7TFA/bwg61CpBgdbCeAfor6ORPDGfCnTKMJ9T+YGzI+k5jQ0wXa3nsA3Pqk37g==",
+  "dgSpecHash": "Rhc5bPrODLyG0g6QmhI/oHEEryu3M9fi/suX9TmMJirzZbI13p+rTLBkA1mNliJhEKKwjjVYGqOSbhbCmLZbaQ==",
   "success": true,
   "projectFilePath": "E:\\Personal Projects\\TapeTextFormatter\\TapeTextFormatter.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Divinity\\.nuget\\packages\\epplus\\6.2.4\\epplus.6.2.4.nupkg.sha512",
     "C:\\Users\\Divinity\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
     "C:\\Users\\Divinity\\.nuget\\packages\\epplus.system.drawing\\6.1.1\\epplus.system.drawing.6.1.1.nupkg.sha512",
+    "C:\\Users\\Divinity\\.nuget\\packages\\ini-parser\\2.5.2\\ini-parser.2.5.2.nupkg.sha512",
     "C:\\Users\\Divinity\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
     "C:\\Users\\Divinity\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Divinity\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\6.0.0\\microsoft.extensions.configuration.fileextensions.6.0.0.nupkg.sha512",
@@ -30,5 +31,16 @@
     "C:\\Users\\Divinity\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
     "C:\\Users\\Divinity\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ini-parser 2.5.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "ini-parser",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
