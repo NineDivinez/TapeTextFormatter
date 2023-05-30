@@ -47,3 +47,273 @@ Log End: 5/29/2023 6:56:30 PM.
 [System]	Main (Formatter.cs)	[Line: 31]	[5/29/2023 7:01:16 PM]:
 Please paste in the list of tape names we need.
 
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:21:31 PM]:
+Please paste in the list of tape names we need.
+
+[System]	Main (Formatter.cs)	[Line: 81]	[5/29/2023 7:21:41 PM]:
+Found based on user input: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+
+[System]	Main (Formatter.cs)	[Line: 85]	[5/29/2023 7:21:41 PM]:
+Please paste the directory to the Excel Spreadsheet.
+
+[System]	Main (Formatter.cs)	[Line: 90]	[5/29/2023 7:21:43 PM]:
+User entered: input
+
+[Debug]	Main (Formatter.cs)	[Line: 127]	[5/29/2023 7:21:43 PM]:
+Tape names found: ***ENDOFREPORT***, 05/25/2316:30:43IronMountainReport-05/25/2316:30:43PAGE1, 05/25/2316:30:43IronMountainReport-05/25/2316:30:43PAGE2, AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855, Serial
+
+[Debug]	Main (Formatter.cs)	[Line: 143]	[5/29/2023 7:21:43 PM]:
+Filtered list: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+
+[Success]	SaveFileWhenReady (FileSaver.cs)	[Line: 18]	[5/29/2023 7:21:43 PM]:
+File saved to Output/05-29-2023.xlsx.
+
+[Success]	SaveFileWhenReady (FileSaver.cs)	[Line: 47]	[5/29/2023 7:21:43 PM]:
+File saved to Output/05-29-2023.txt.
+
+Log End: 5/29/2023 7:21:43 PM.
+
+
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:23:33 PM]:
+Please paste in the list of tape names we need.
+
+[System]	Main (Formatter.cs)	[Line: 81]	[5/29/2023 7:24:49 PM]:
+Found based on user input: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+
+[System]	Main (Formatter.cs)	[Line: 85]	[5/29/2023 7:24:49 PM]:
+Please paste the directory to the Excel Spreadsheet.
+
+[System]	Main (Formatter.cs)	[Line: 90]	[5/29/2023 7:25:56 PM]:
+User entered: input
+
+[Debug]	Main (Formatter.cs)	[Line: 127]	[5/29/2023 7:25:56 PM]:
+Tape names found: ***ENDOFREPORT***, 05/25/2316:30:43IronMountainReport-05/25/2316:30:43PAGE1, 05/25/2316:30:43IronMountainReport-05/25/2316:30:43PAGE2, AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855, Serial
+
+[Debug]	Main (Formatter.cs)	[Line: 143]	[5/29/2023 7:25:56 PM]:
+Filtered list: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+
+[Success]	SaveFileWhenReady (FileSaver.cs)	[Line: 18]	[5/29/2023 7:25:57 PM]:
+File saved to Output/05-29-2023.xlsx.
+
+[Success]	SaveFileWhenReady (FileSaver.cs)	[Line: 47]	[5/29/2023 7:25:57 PM]:
+File saved to Output/05-29-2023.txt.
+
+Log End: 5/29/2023 7:25:57 PM.
+
+
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:26:25 PM]:
+Please paste in the list of tape names.
+Enter Input if you want placed a file with the info in the Input folder.
+
+[System]	Main (Formatter.cs)	[Line: 81]	[5/29/2023 7:27:05 PM]:
+Found based on user input: E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\Input
+
+[System]	Main (Formatter.cs)	[Line: 85]	[5/29/2023 7:27:05 PM]:
+Please paste the directory to the Excel Spreadsheet.
+
+[System]	Main (Formatter.cs)	[Line: 90]	[5/29/2023 7:27:10 PM]:
+User entered: Input
+
+[Debug]	Main (Formatter.cs)	[Line: 127]	[5/29/2023 7:27:10 PM]:
+Tape names found: ***ENDOFREPORT***, 05/25/2316:30:43IronMountainReport-05/25/2316:30:43PAGE1, 05/25/2316:30:43IronMountainReport-05/25/2316:30:43PAGE2, AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855, Serial
+
+[Debug]	Main (Formatter.cs)	[Line: 143]	[5/29/2023 7:27:10 PM]:
+Filtered list: 
+
+[Success]	SaveFileWhenReady (FileSaver.cs)	[Line: 18]	[5/29/2023 7:27:10 PM]:
+File saved to Output/05-29-2023.xlsx.
+
+[Success]	SaveFileWhenReady (FileSaver.cs)	[Line: 47]	[5/29/2023 7:27:10 PM]:
+File saved to Output/05-29-2023.txt.
+
+Log End: 5/29/2023 7:27:10 PM.
+
+
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:28:17 PM]:
+Please paste in the list of tape names.
+Enter Input if you want placed a file with the info in the Input folder.
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:29:31 PM]:
+Please paste in the list of tape names.
+Enter Input if you want placed a file with the info in the Input folder.
+
+[System]	Main (Formatter.cs)	[Line: 81]	[5/29/2023 7:29:32 PM]:
+Found based on user input: entry.ToLower() == "input" || entry.Contains(":\\")
+
+[System]	Main (Formatter.cs)	[Line: 85]	[5/29/2023 7:29:32 PM]:
+Please paste the directory to the Excel Spreadsheet.
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:33:40 PM]:
+Please paste in the list of tape names.
+Enter Input if you want placed a file with the info in the Input folder.
+
+[System]	Main (Formatter.cs)	[Line: 87]	[5/29/2023 7:33:46 PM]:
+Found based on user input: E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\Input
+
+[System]	Main (Formatter.cs)	[Line: 91]	[5/29/2023 7:33:46 PM]:
+Please paste the directory to the Excel Spreadsheet.
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:34:14 PM]:
+Please paste in the list of tape names.
+Enter Input if you want placed a file with the info in the Input folder.
+
+[System]	Main (Formatter.cs)	[Line: 87]	[5/29/2023 7:34:17 PM]:
+Found based on user input: E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\Input
+
+[System]	Main (Formatter.cs)	[Line: 91]	[5/29/2023 7:34:17 PM]:
+Please paste the directory to the Excel Spreadsheet.
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:34:32 PM]:
+Please paste in the list of tape names.
+Enter Input if you want placed a file with the info in the Input folder.
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:35:41 PM]:
+Please paste in the list of tape names.
+Enter Input if you want placed a file with the info in the Input folder.
+
+[Warning]	Main (Formatter.cs)	[Line: 47]	[5/29/2023 7:35:59 PM]:
+Please enter a file path, not a directory!
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:45:04 PM]:
+Please paste in the list of tape names.
+Enter Input if you want placed a file with the info in the Input folder.
+
+[Warning]	Main (Formatter.cs)	[Line: 85]	[5/29/2023 7:45:13 PM]:
+These should not have special characters. Please try the entry again.
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:47:23 PM]:
+Please paste in the list of tape names.
+Enter "Input" if you want placed a file with the info in the Input folder.
+
+[System]	Main (Formatter.cs)	[Line: 95]	[5/29/2023 7:47:34 PM]:
+Found based on user input: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+
+[System]	Main (Formatter.cs)	[Line: 99]	[5/29/2023 7:47:34 PM]:
+Please paste the directory to the Excel Spreadsheet.
+
+[System]	Main (Formatter.cs)	[Line: 104]	[5/29/2023 7:49:13 PM]:
+User entered: E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\Input\irnmtnrpt.csv
+
+[Debug]	Main (Formatter.cs)	[Line: 142]	[5/29/2023 7:49:13 PM]:
+Tape names found: ***ENDOFREPORT***, 05/25/2316:30:43IronMountainReport-05/25/2316:30:43PAGE1, 05/25/2316:30:43IronMountainReport-05/25/2316:30:43PAGE2, AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855, Serial
+
+[Debug]	Main (Formatter.cs)	[Line: 158]	[5/29/2023 7:49:13 PM]:
+Filtered list: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+
+[Success]	SaveFileWhenReady (FileSaver.cs)	[Line: 18]	[5/29/2023 7:49:13 PM]:
+File saved to Output/05-29-2023.xlsx.
+
+[Success]	SaveFileWhenReady (FileSaver.cs)	[Line: 47]	[5/29/2023 7:49:13 PM]:
+File saved to Output/05-29-2023.txt.
+
+Log End: 5/29/2023 7:49:13 PM.
+
+
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:50:31 PM]:
+Please paste in the list of tape names.
+Enter "Input" if you want placed a file with the info in the Input folder.
+
+[Warning]	Main (Formatter.cs)	[Line: 47]	[5/29/2023 7:50:34 PM]:
+Please enter a file path, not a directory!
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:52:04 PM]:
+Please paste in the list of tape names.
+Enter "Input" if you want placed a file with the info in the Input folder.
+
+[System]	Main (Formatter.cs)	[Line: 95]	[5/29/2023 7:52:06 PM]:
+Found based on user input: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+
+[System]	Main (Formatter.cs)	[Line: 99]	[5/29/2023 7:52:06 PM]:
+Please paste the directory to the Excel Spreadsheet.
+
+[System]	Main (Formatter.cs)	[Line: 104]	[5/29/2023 7:52:07 PM]:
+User entered: if (entry.ToLower() == "input" || entry.Contains(":\\"))
+
+[Warning]	Main (Formatter.cs)	[Line: 180]	[5/29/2023 7:52:07 PM]:
+No such file exists. Please try again.
+
+[System]	Main (Formatter.cs)	[Line: 104]	[5/29/2023 7:52:07 PM]:
+User entered:                 {
+
+[Warning]	Main (Formatter.cs)	[Line: 180]	[5/29/2023 7:52:07 PM]:
+No such file exists. Please try again.
+
+[System]	Main (Formatter.cs)	[Line: 104]	[5/29/2023 7:52:07 PM]:
+User entered:                     entry.Replace("\"", "");
+
+[Warning]	Main (Formatter.cs)	[Line: 180]	[5/29/2023 7:52:07 PM]:
+No such file exists. Please try again.
+
+[System]	Main (Formatter.cs)	[Line: 104]	[5/29/2023 7:52:07 PM]:
+User entered:                     inputs.Add(entry);
+
+[Warning]	Main (Formatter.cs)	[Line: 180]	[5/29/2023 7:52:07 PM]:
+No such file exists. Please try again.
+
+[System]	Main (Formatter.cs)	[Line: 104]	[5/29/2023 7:52:07 PM]:
+User entered:                     break;
+
+[Warning]	Main (Formatter.cs)	[Line: 180]	[5/29/2023 7:52:07 PM]:
+No such file exists. Please try again.
+
+[System]	Main (Formatter.cs)	[Line: 104]	[5/29/2023 7:52:20 PM]:
+User entered: "E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\Input\irnmtnrpt.csv"\
+
+[Warning]	Main (Formatter.cs)	[Line: 180]	[5/29/2023 7:52:20 PM]:
+No such file exists. Please try again.
+
+[System]	Main (Formatter.cs)	[Line: 104]	[5/29/2023 7:52:23 PM]:
+User entered: "E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\Input\irnmtnrpt.csv"
+
+[Warning]	Main (Formatter.cs)	[Line: 180]	[5/29/2023 7:52:23 PM]:
+No such file exists. Please try again.
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:55:15 PM]:
+Please paste in the list of tape names.
+Enter "Input" if you want placed a file with the info in the Input folder.
+
+[System]	Main (Formatter.cs)	[Line: 95]	[5/29/2023 7:55:30 PM]:
+Found based on user input: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+
+[System]	Main (Formatter.cs)	[Line: 99]	[5/29/2023 7:55:30 PM]:
+Please paste the directory to the Excel Spreadsheet.
+
+[System]	Main (Formatter.cs)	[Line: 104]	[5/29/2023 7:55:40 PM]:
+User entered: "E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\Input\irnmtnrpt.csv"
+
+[Warning]	Main (Formatter.cs)	[Line: 180]	[5/29/2023 7:55:40 PM]:
+No such file exists. Please try again.
+
+[System]	Main (Formatter.cs)	[Line: 37]	[5/29/2023 7:58:14 PM]:
+Please paste in the list of tape names.
+Enter "Input" if you want placed a file with the info in the Input folder.
+
+[System]	Main (Formatter.cs)	[Line: 95]	[5/29/2023 7:58:16 PM]:
+Found based on user input: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+
+[System]	Main (Formatter.cs)	[Line: 99]	[5/29/2023 7:58:16 PM]:
+Please paste the directory to the Excel Spreadsheet.
+
+[System]	Main (Formatter.cs)	[Line: 104]	[5/29/2023 7:58:21 PM]:
+User entered: "E:\Personal Projects\TapeTextFormatter\bin\Debug\net6.0\Input\irnmtnrpt.csv"
+
+[Debug]	Main (Formatter.cs)	[Line: 144]	[5/29/2023 7:58:21 PM]:
+Tape names found: ***ENDOFREPORT***, 05/25/2316:30:43IronMountainReport-05/25/2316:30:43PAGE1, 05/25/2316:30:43IronMountainReport-05/25/2316:30:43PAGE2, AB0165, AB0265, AB0356, AB0357, AB0401, AB0402, AB0403, AB0458, AB0646, AB0852, AB0934, AB0985, AB0988, AB1130, AB1133, AB1285, AB1412, AB1413, AB1472, AB1474, AB1478, AB1651, AB1652, BB0018, BB0176, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1749, BB1750, BB1751, BB1752, BB1754, BB1755, BB1816, BB1817, BB2101, BB2102, BB2103, BB2104, BB2105, BB2243, BB2244, BB2430, BB2846, BB2847, BB2855, Serial
+
+[Debug]	Main (Formatter.cs)	[Line: 160]	[5/29/2023 7:58:21 PM]:
+Filtered list: BB0018, BB0494, BB0498, BB0608, BB0611, BB0613, BB0959, BB0960, BB1750, BB1816, BB1817
+
+[Success]	SaveFileWhenReady (FileSaver.cs)	[Line: 18]	[5/29/2023 7:58:22 PM]:
+File saved to Output/05-29-2023.xlsx.
+
+[Success]	SaveFileWhenReady (FileSaver.cs)	[Line: 47]	[5/29/2023 7:58:22 PM]:
+File saved to Output/05-29-2023.txt.
+
+Log End: 5/29/2023 7:58:22 PM.
+
+
+

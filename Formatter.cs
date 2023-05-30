@@ -7,11 +7,14 @@ using FileSaving;
 
 namespace Main
 {
+#pragma warning disable CS8602
+#pragma warning disable CS8618
+#pragma warning disable CS8600
     internal class Program
     {
-        private static ConfigReader _config = new();
-        private static ExcelSaver _excelSaver = new();
-        private static TextSaver _textSaver = new();
+        private readonly static ConfigReader _config = new();
+        private readonly static ExcelSaver _excelSaver = new();
+        private readonly static TextSaver _textSaver = new();
 
         /// <summary>
         /// Contains the directory (NOT A FILE) for the output.
@@ -31,13 +34,19 @@ namespace Main
 
             #region Desired List Construction
             //Get the desired list from the user.
-            Logging.Print("Please paste in the list of tape names we need.", MessageType.System).GetAwaiter().GetResult();
+            Logging.Print("Please paste in the list of tape names.\nEnter \"Input\" if you want placed a file with the info in the Input folder.", MessageType.System).GetAwaiter().GetResult();
             //If the input is invalid, go back to recapture it.
             AwaitInput:
             List<string> desiredListOfTapeNames = AwaitEntries();
 
-            if (File.Exists(desiredListOfTapeNames[0]) || desiredListOfTapeNames[0].ToLower() == "input")
+            if (File.Exists(desiredListOfTapeNames[0]) || Directory.Exists(desiredListOfTapeNames[0]) || desiredListOfTapeNames[0].ToLower() == "input")
             {
+                var fileAttributes = File.GetAttributes(desiredListOfTapeNames[0]);
+                if (fileAttributes.HasFlag(FileAttributes.Directory) && desiredListOfTapeNames[0].ToLower() != "input")
+                {
+                    Logging.Print("Please enter a file path, not a directory!", MessageType.Warning).GetAwaiter().GetResult();
+                    goto AwaitInput;
+                }
                 //This will be the final destination we are reading. Set it to first entry and then check if it needs to change.
                 string inputFileDestination = desiredListOfTapeNames[0];
                 
@@ -69,6 +78,14 @@ namespace Main
                     goto AwaitInput;
                 }
             }
+            else
+            {
+                if (desiredListOfTapeNames.Any(val => val.ContainsNoSpecialCharacters()))
+                {
+                    Logging.Print("These should not have special characters. Please try the entry again.", MessageType.Warning).GetAwaiter().GetResult();
+                    goto AwaitInput;
+                }
+            }
             #endregion
 
             //Sorts the list in alphabetical order.
@@ -87,7 +104,10 @@ namespace Main
             Logging.Print("User entered: " + excelDestination, MessageType.System, false).GetAwaiter().GetResult();
 
             List<TapeData> unfilteredTapeDataList;
+
             //Verifies the entry is valid
+
+            excelDestination = excelDestination.Replace("\"", "");
             if (File.Exists(excelDestination) || excelDestination.ToLower() == "input")
             {
                 //Allows the user to specify "Whatever is in the input folder"
@@ -139,7 +159,7 @@ namespace Main
                 //Logging the filtered list for debugging
                 Logging.Print("Filtered list: " + string.Join(", ", filteredList), MessageType.Debug, false).GetAwaiter().GetResult();
 
-                using (ExcelPackage output = new ExcelPackage())
+                using (ExcelPackage output = new())
                 {
                     ExcelWorksheet worksheet = output.Workbook.Worksheets.Add("Sheet1");
                     int columnIndex = 1;
@@ -167,7 +187,7 @@ namespace Main
             Logging.Print("All finished. Check the Logging folder for the results :)", MessageType.System, true, false).GetAwaiter().GetResult();
             Logging.PrintLogEnd().GetAwaiter().GetResult();
         }
-
+#pragma warning disable CS8619
         private static List<TapeData> ExtractData(ExcelWorksheet sheet, params string[] Columns)
         {
             List<string>[] data = new List<string>[Columns.Length];
@@ -178,12 +198,6 @@ namespace Main
 
             for (int i = 0; i < Columns.Length; i++)
             {
-                //if (sheet.Rows.Any(row => row.Hidden))
-                //{
-                //    Logging.Print("One or more of the columns are hidden!", MessageType.Warning).GetAwaiter().GetResult();
-                //    return null;
-                //}
-
                 var rowRange = sheet.Cells[$"{Columns[i]}:{Columns[i]}"];
                 List<string> foundValue = rowRange.Select(cell => cell.Value?.ToString()).ToList();
 
@@ -198,43 +212,39 @@ namespace Main
                 });
             }
 
-            //foreach (var row in data)
-            //{
-            //    row.RemoveAt(0);
-            //    row.RemoveAt(0);
-            //    row.RemoveAt(row.Count - 1);
-            //    row.RemoveAt(row.Count - 1);
-            //}
-
-            TapeData current = null;
             for (int i = 0; i < data[0].Count; i++)
                 extractedData.Add(new(data[0][i].TrimSpacing(), data[1][i].TrimSpacing(), data[2][i].TrimSpacing()));
 
             return extractedData;
         }
 
+
+#pragma warning disable CS8600
         /// <summary>
         /// Waits for the user to finish entering multiple entries.
         /// </summary>
         /// <returns>A List of entries provided by the user.</returns>
         private static List<string> AwaitEntries()
         {
-            Logging.PrintToConsole("Double press 'Return' when completed.", MessageType.System);
+            //Logging.PrintToConsole("Double press 'Return' when completed.", MessageType.System);
             List<string> inputs = new();
             while (true)
             {
-#pragma warning disable CS8600
                 string entry = Console.ReadLine();
-#pragma warning restore CS8600
 
                 if (string.IsNullOrEmpty(entry))
                     break;
 
                 inputs.Add(entry);
+
+                if (entry.ToLower() == "input" || entry.Contains(":\\"))
+                    break;
             }
             return inputs; ;
         }
 
+
+#pragma warning disable CS8600
         /// <summary>
         /// Converts the data from a text file to an excel sheet.
         /// </summary>
@@ -242,9 +252,9 @@ namespace Main
         /// <returns>The full Excel Sheet</returns>
         private static ExcelPackage ConvertCsvToExcel(string filePath)
         {
-            DataTable dataTable = new DataTable();
+            DataTable dataTable = new();
 
-            using (StreamReader reader = new StreamReader(filePath))
+            using (StreamReader reader = new(filePath))
             {
                 string headerLine = reader.ReadLine();
                 string[] headers = headerLine.Split(',');
@@ -273,22 +283,11 @@ namespace Main
                 }
             }
 
-            ExcelPackage package = new ExcelPackage();
+            ExcelPackage package = new();
             ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Sheet1");
             worksheet.Cells["A1"].LoadFromDataTable(dataTable, true);
 
             return package;
-        }
-
-        private static char IntToLetter(int number)
-        {
-            if (number < 1 || number > 26)
-            {
-                throw new ArgumentException("Invalid number. Number must be between 1 and 26.");
-            }
-
-            char letter = (char)('A' + (number - 1));
-            return letter;
         }
     }
 }

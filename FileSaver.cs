@@ -3,9 +3,10 @@ using LoggingSys;
 
 namespace FileSaving
 {
+#pragma warning disable CS8602
     internal class ExcelSaver
     {
-        FileSystemWatcher watcher = new();
+        private readonly FileSystemWatcher watcher = new();
 
         public async void SaveFileWhenReady(ExcelPackage excelSheet, string saveDestination)
         {
@@ -33,7 +34,7 @@ namespace FileSaving
     internal class TextSaver
     {
 
-        FileSystemWatcher watcher = new();
+        private readonly FileSystemWatcher watcher = new();
 
         public async void SaveFileWhenReady(StreamWriter writer, string saveDestination, string content)
         {

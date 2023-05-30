@@ -122,7 +122,7 @@ namespace LoggingSys
         }
     }
 
-    internal static class Extensions
+    internal static class GothicExtensions
     {
         /// <summary>
         /// Structures the message for the log format.
@@ -165,6 +165,12 @@ namespace LoggingSys
         /// <returns>The trimmed value</returns>
         internal static string TrimM8(this string original) =>
             original.Replace("M8", "");
+
+        public static bool ContainsNoSpecialCharacters(this string input)
+        {
+            Regex regex = new Regex("[^a-zA-Z0-9]");
+            return regex.IsMatch(input);
+        }
 
         /// <summary>
         /// Checks if <see langword="T"/> is null
