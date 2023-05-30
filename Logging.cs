@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using OfficeOpenXml;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using TapeTextFormatter;
 
@@ -26,6 +27,8 @@ namespace LoggingSys
         /// <param name="addToLog">Boolean value representing if the log goes to the File.</param>
         internal async static Task Print(string outputMessage, MessageType messageType = MessageType.Empty, bool printToConsole = true, bool addToLog = true,[CallerLineNumber] int line = 0, [CallerMemberName] string caller = "", [CallerFilePath] string callerFilePath = "")
         {
+            outputMessage += "\n";
+
             //Format the message for when we print it.
             outputMessage = outputMessage.FormatForPrint(messageType, line, caller, callerFilePath);
 
@@ -68,7 +71,7 @@ namespace LoggingSys
             Console.WriteLine("Ending log...");
 
             //Generates the first part of the message
-            string message = $"Log End: {DateTime.Now}.\n";
+            string message = $"Log End: {DateTime.Now}.\n\n\n";
 
             //Write the end log
             await WriteLog(message);
@@ -131,6 +134,10 @@ namespace LoggingSys
         /// <returns>The formatted message</returns>
         internal static string FormatForPrint(this string message, MessageType type, int line, string caller, string callerFilePath)
         {
+            string directory = Directory.GetParent(callerFilePath).FullName;
+
+            callerFilePath = callerFilePath.Replace(directory + "\\", "");
+
             message = $"{caller} ({callerFilePath})\t[Line: {line}]\t[{DateTime.Now}]:\n{message}";
 
             if (type != MessageType.Empty)

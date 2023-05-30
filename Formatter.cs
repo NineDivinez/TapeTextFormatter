@@ -24,7 +24,10 @@ namespace Main
 
         internal static void Main(string[] args)
         {
-            outputDirectory = _config.GetDestination(ConfigReader.Destinations.Default);
+            outputDirectory = _config.GetDestination(ConfigReader.Destinations.OutputForLexington);
+            //outputDirectory = _config.GetDestination(ConfigReader.Destinations.OutputForChaska);
+            if (outputDirectory.DefaultOrNull())
+                outputDirectory = _config.GetDestination(ConfigReader.Destinations.DefaultOutput);
 
             #region Desired List Construction
             //Get the desired list from the user.
@@ -43,7 +46,7 @@ namespace Main
                 {
                     //Finds all files in the folder, then filters out any that are text files.
                     inputDirectory = _config.GetDestination(ConfigReader.Destinations.InputFolder);
-                    inputFileDestination = Directory.GetFiles(inputDirectory).First(file => !file.EndsWith(".txt"));
+                    inputFileDestination = Directory.GetFiles(inputDirectory).First(file => file.EndsWith(".txt"));
                     //If we did not find anything, inform the user to try again.
                     if (inputFileDestination.DefaultOrNull())
                     {
@@ -69,11 +72,10 @@ namespace Main
             #endregion
 
             //Sorts the list in alphabetical order.
-            desiredListOfTapeNames.Sort();
-            //desiredListOfTapeNames.Each(val => val = val.TrimM8()); //Commented out temporarily since this is not a needed feature yet. Just shows where we need it.
+            desiredListOfTapeNames.Sort();//desiredListOfTapeNames.Each(val => val = val.TrimM8()); //Commented out temporarily since this is not a needed feature yet. Just shows where we need it.
 
             //Silent log print
-            Logging.Print("User entered: " + string.Join(", ", desiredListOfTapeNames), MessageType.System, printToConsole: false).GetAwaiter().GetResult();
+            Logging.Print("Found based on user input: " + string.Join(", ", desiredListOfTapeNames), MessageType.System, printToConsole: false).GetAwaiter().GetResult();
 
             #region Possible List Construction
             //Get the Excel Sheet from the user.
@@ -129,7 +131,7 @@ namespace Main
                 {
                     desiredListOfTapeNames.Each(entry =>
                     {
-                        if (entry.ToLower().Equals(candidate.name.ToLower()))
+                        if (entry.ToLower() == candidate.name.ToLower())
                             filteredList.Add(candidate);
                     });
                 }
@@ -166,31 +168,43 @@ namespace Main
             Logging.PrintLogEnd().GetAwaiter().GetResult();
         }
 
-
-        private static List<TapeData> ExtractData(ExcelWorksheet sheet, params string[] Rows)
+        private static List<TapeData> ExtractData(ExcelWorksheet sheet, params string[] Columns)
         {
-            List<string>[] data = new List<string>[Rows.Length];
+            List<string>[] data = new List<string>[Columns.Length];
+            for (int i = 0; i < data.Length; i++)
+                data[i] = new();
+
             List<TapeData> extractedData = new();
 
-            for (int i = 0; i < Rows.Length; i++)
+            for (int i = 0; i < Columns.Length; i++)
             {
-                if (sheet.Columns.Any(val => val.Hidden))
+                //if (sheet.Rows.Any(row => row.Hidden))
+                //{
+                //    Logging.Print("One or more of the columns are hidden!", MessageType.Warning).GetAwaiter().GetResult();
+                //    return null;
+                //}
+
+                var rowRange = sheet.Cells[$"{Columns[i]}:{Columns[i]}"];
+                List<string> foundValue = rowRange.Select(cell => cell.Value?.ToString()).ToList();
+
+                foundValue.Each(val =>
                 {
-                    Logging.Print("One or more of the columns are hidden!", MessageType.Warning).GetAwaiter().GetResult();
-                    return null;
-                }
-
-                var columnARange = sheet.Cells[$"{Rows[i]}:{Rows[i]}"];
-                data[i] = columnARange.Select(cell => cell.Value?.ToString()).ToList();
+                    if (!val.DefaultOrNull())
+                    {
+                        val = val.Trim();
+                        if (val.Length > 0)
+                            data[i].Add(val);
+                    }
+                });
             }
 
-            foreach (var column in data)
-            {
-                column.RemoveAt(0);
-                column.RemoveAt(0);
-                column.RemoveAt(column.Count - 1);
-                column.RemoveAt(column.Count - 1);
-            }
+            //foreach (var row in data)
+            //{
+            //    row.RemoveAt(0);
+            //    row.RemoveAt(0);
+            //    row.RemoveAt(row.Count - 1);
+            //    row.RemoveAt(row.Count - 1);
+            //}
 
             TapeData current = null;
             for (int i = 0; i < data[0].Count; i++)
@@ -198,9 +212,6 @@ namespace Main
 
             return extractedData;
         }
-
-
-        
 
         /// <summary>
         /// Waits for the user to finish entering multiple entries.
@@ -254,8 +265,7 @@ namespace Main
                         int diff = dataValues.Length - dataTable.Columns.Count;
                         for (int i = 0; i < diff; i++)
                         {
-                            string newColumnName = $"Column {dataTable.Columns.Count + i + 1}";
-                            dataTable.Columns.Add(newColumnName);
+                            dataTable.Columns.Add(dataValues[i]);
                         }
                     }
 

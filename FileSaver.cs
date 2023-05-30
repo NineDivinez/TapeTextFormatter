@@ -5,62 +5,39 @@ namespace FileSaving
 {
     internal class ExcelSaver
     {
-        private ExcelPackage _package;
-        private string _packageDestination;
-
-
         FileSystemWatcher watcher = new();
 
-        public void SaveFileWhenReady(ExcelPackage excelSheet, string saveDestination)
+        public async void SaveFileWhenReady(ExcelPackage excelSheet, string saveDestination)
         {
+                Retry:
             //Try to save it, if it's not catch the error
             try
             {
                 excelSheet.SaveAs(saveDestination);
-                Logging.Print($"File saved to {saveDestination}.", MessageType.Success).GetAwaiter().GetResult();
+                await Logging.Print($"File saved to {saveDestination}.", MessageType.Success);
             }
-            #region Subscribe for when the file is available
-            catch (IOException exc)
+            catch (InvalidOperationException exc)
             {
-                _package = excelSheet;
-                _packageDestination = saveDestination;
+                watcher.Filter = "*.xlsx";
+                watcher.Path = Directory.GetParent(saveDestination).FullName;
 
-                watcher.Filter = saveDestination;
-                watcher.NotifyFilter = NotifyFilters.FileName;
+                await Logging.Print($"Unable to {saveDestination} file, as it is already in use. Please close the file so changes can be made.\nPress any key to cancel.", MessageType.Warning);
+                await Logging.Print(exc.Message, MessageType.Debug, printToConsole: false);
 
-                watcher.Changed += SaveFile;
+                watcher.WaitForChanged(WatcherChangeTypes.Deleted);
 
-                watcher.EnableRaisingEvents = true;
-
-                Logging.Print($"Unable to {saveDestination} file, as it is already in use. Please close the file so changes can be made.", MessageType.Warning).GetAwaiter().GetResult();
-                Logging.Print(exc.Message, MessageType.Debug).GetAwaiter().GetResult();
-            }
-            #endregion
-        }
-        private void SaveFile(object sender, FileSystemEventArgs e)
-        {
-            try
-            {
-                _package.Save(_packageDestination);
-                watcher.EnableRaisingEvents = false;
-            }
-            catch(Exception ex)
-            {
-                Logging.Print("Error when saving file! Flagged as no longer in use, but could not save!", MessageType.CriticalError).GetAwaiter().GetResult();
-                Logging.Print($"File Destination: {_packageDestination}", MessageType.Debug, printToConsole: false).GetAwaiter().GetResult();
+                goto Retry;
             }
         }
     }
     internal class TextSaver
     {
-        private StreamWriter _writer;
-        private string _saveDestination;
-        private string _content;
 
         FileSystemWatcher watcher = new();
 
-        public void SaveFileWhenReady(StreamWriter writer, string saveDestination, string content)
+        public async void SaveFileWhenReady(StreamWriter writer, string saveDestination, string content)
         {
+                Retry:
             //Try to save it, if it's not catch the error
             try
             {
@@ -71,36 +48,17 @@ namespace FileSaving
             #region Subscribe for when the file is available
             catch (IOException exc)
             {
-                _writer = writer;
-                _saveDestination = saveDestination;
-                _content = content;
+                watcher.Filter = "*.txt";
+                watcher.Path = Directory.GetParent(saveDestination).FullName;
 
-                watcher.Filter = saveDestination;
-                watcher.NotifyFilter = NotifyFilters.FileName;
+                await Logging.Print($"Unable to save {saveDestination}, as it is already in use. Please close the file so changes can be made.", MessageType.Warning);
+                await Logging.Print(exc.Message, MessageType.Debug);
 
-                watcher.Changed += SaveFile;
+                watcher.WaitForChanged(WatcherChangeTypes.Deleted);
 
-                watcher.EnableRaisingEvents = true;
-
-                Logging.Print($"Unable to save {saveDestination}, as it is already in use. Please close the file so changes can be made.", MessageType.Warning).GetAwaiter().GetResult();
-                Logging.Print(exc.Message, MessageType.Debug).GetAwaiter().GetResult();
+                goto Retry;
             }
             #endregion
-        }
-        private void SaveFile(object sender, FileSystemEventArgs e)
-        {
-            try
-            {
-                _writer.Write(_content);
-                _writer.Close();
-                Logging.Print($"File saved to {_saveDestination}.", MessageType.Success).GetAwaiter().GetResult();
-                watcher.EnableRaisingEvents = false;
-            }
-            catch (Exception ex)
-            {
-                Logging.Print("Error when saving file! Flagged as no longer in use, but could not save!", MessageType.CriticalError).GetAwaiter().GetResult();
-                Logging.Print($"File Destination: {_saveDestination}", MessageType.Debug, printToConsole: false).GetAwaiter().GetResult();
-            }
         }
     }
 }

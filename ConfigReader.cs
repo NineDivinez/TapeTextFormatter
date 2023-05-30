@@ -20,7 +20,7 @@ namespace Configuration
         /// </summary>
         public enum Destinations
         {
-            InputFolder, OutputForLexington, OutputForChaska, Default
+            InputFolder, OutputForLexington, OutputForChaska, DefaultOutput
         }
 
         /// <summary>
